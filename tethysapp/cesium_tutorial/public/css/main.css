@@ -1,0 +1,13 @@
+#app-header .tethys-app-header #nav-title-wrapper {
+    padding-left: 15px;
+}
+
+#app-content-wrapper #app-content {
+    padding-bottom: 0;
+    height: 100%;
+}
+
+#inner-app-content {
+    padding: 0;
+}
+
