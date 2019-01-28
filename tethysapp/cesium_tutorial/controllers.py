@@ -47,7 +47,7 @@ def home(request):
     }
 
     model = static('cesium_tutorial/cesium_models/GroundVehicle/GroundVehicle.glb')
-    clock = {'Cesium.Clock': {
+    clock = {'clock': {'Cesium.Clock': {
         'startTime': {'Cesium.JulianDate.fromIso8601': ['2017-07-11T00:00:00Z']},
         'stopTime': {'Cesium.JulianDate.fromIso8601': ['2017-07-11T24:00:00Z']},
         'currentTime': {'Cesium.JulianDate.fromIso8601': ['2017-07-11T10:00:00Z']},
@@ -55,18 +55,18 @@ def home(request):
         'clockStep': 'Cesium.ClockStep.SYSTEM_CLOCK_MULTIPLIER',
         'multiplier': 1000,
         'shouldAnimate': True
-    }}
+    }}}
 
     cesium_map_view = CesiumMapView(
         options={
             'shouldAnimate': True,
             'shadows': True,
-            'clock': {'Cesium.ClockViewModel': [clock]}  # TODO: Make options able to recursively parse options
         },
         globe={
             'enableLighting': True,
             'depthTestAgainstTerrain': True
         },
+        clock=clock,
         models={
             'Cesium Truck': {
                 'name': 'truck',
