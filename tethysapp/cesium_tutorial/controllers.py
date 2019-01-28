@@ -15,19 +15,18 @@ def home(request):
     hpr = {'Cesium.HeadingPitchRoll': [math.radians(180), math.radians(2), math.radians(-6)]}
     orientation = {'Cesium.Transforms.headingPitchRollQuaternion': [position, hpr]}
 
-
     # Sunrise View
-    sunrize_view = {
+    sunrise_view = {
         'flyTo': {
             'destination': {'Cesium.Cartesian3': [-1371203.1456494154, -5508700.033950869, 2901802.2749172337]},
             'orientation': {
-                'heading': math.radians(67.64973594265429),
-                'pitch': math.radians(-8.158676059409297),
-                'roll': math.radians(359.9999987450017)
+                'heading': {'Cesium.Math.toRadians': 67.64973594265429},
+                'pitch': {'Cesium.Math.toRadians': -8.158676059409297},
+                'roll': {'Cesium.Math.toRadians': 359.9999987450017}
             },
             'duration': 5,
             'pitchAdjustHeight': 20,
-            # 'maximumHeight': 100
+            'maximumHeight': 100
         }
     }
 
@@ -36,13 +35,13 @@ def home(request):
         'flyTo': {
             'destination': {'Cesium.Cartesian3': [-1371214.9554156072, -5508700.8494476415, 2901826.794611029]},
             'orientation': {
-                'heading': math.radians(80.5354269423926),
-                'pitch': math.radians(-15.466062969558285),
-                'roll': math.radians(359.9999999526579)
+                'heading': {'Cesium.Math.toRadians': 80.5354269423926},
+                'pitch': {'Cesium.Math.toRadians': -15.466062969558285},
+                'roll': {'Cesium.Math.toRadians': 359.9999999526579}
             },
             'duration': 5,
             'pitchAdjustHeight': 20,
-            # 'maximumHeight': 100
+            'maximumHeight': 100
         }
     }
 
@@ -88,7 +87,7 @@ def home(request):
                 'requestWaterMask': False
             }
         }},
-        view=front_view
+        view=sunrise_view
     )
 
     context = {
