@@ -12,7 +12,7 @@ class CesiumTutorial(TethysAppBase):
     package = 'cesium_tutorial'
     root_url = 'cesium-tutorial'
     color = '#16a085'
-    description = '&quot;Demonstrates how to use CesiumMapView in an app.&quot;'
+    description = 'Demonstrates how to use CesiumMapView in an app.'
     tags = ''
     enable_feedback = False
     feedback_emails = []
